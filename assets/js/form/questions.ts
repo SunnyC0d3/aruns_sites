@@ -1,1 +1,1 @@
-console.log( 'questions' );
+console.log( survey.params );

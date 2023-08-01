@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
   \*************************************/
 /***/ (() => {
 
-console.log('questions');
+console.log(survey.params);
 
 /***/ }),
 
