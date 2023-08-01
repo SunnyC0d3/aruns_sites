@@ -1,0 +1,23 @@
+.wp-block-cover {
+    & .wp-block-cover__inner-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    & .wp-block-group {
+        &.top {
+            align-self: flex-start;
+            width: 100%;
+        }
+        &.center {
+            align-self: center;
+            width: 100%;
+        }
+        &.bottom {
+            align-self: flex-end;
+            width: 100%;
+        }
+    }
+}

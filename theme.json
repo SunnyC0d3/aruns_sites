@@ -1,0 +1,210 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "settings": {
+        "spacing": {
+            "margin": true,
+            "padding": true,
+            "units": [ "px", "em", "rem", "vh", "vw" ],
+            "spacingSizes": [
+                {
+                    "slug": "x-small",
+                    "size": "0.5rem",
+                    "name": "x-small"
+                },
+                {
+                    "slug": "small",
+                    "size": "1rem",
+                    "name": "small"
+                },
+                {
+                    "slug": "medium",
+                    "size": "2rem",
+                    "name": "medium"
+                },
+                {
+                    "slug": "large",
+                    "size": "3rem",
+                    "name": "large"
+                },
+                {
+                    "slug": "x-large",
+                    "size": "4rem",
+                    "name": "x-large"
+                }
+            ]
+        },
+        "color": {
+            "defaultPalette": false,
+            "palette": [
+                {
+                    "name": "Grey",
+                    "slug": "grey",
+                    "color": "#aaaaaa"
+                },
+                {
+                    "name": "Blue",
+                    "slug": "blue",
+                    "color": "#126eb4"
+                },
+                {
+                    "name": "Sky Blue",
+                    "slug": "sky-blue",
+                    "color": "#b5d6eb"
+                },
+                {
+                    "name": "Distance",
+                    "slug": "distance",
+                    "color": "#576a74a8"
+                },
+                {
+                    "name": "Orange",
+                    "slug": "orange",
+                    "color": "#ef784c"
+                },
+                {
+                    "name": "White",
+                    "slug": "white",
+                    "color": "#ffffff"
+                },
+                {
+                    "name": "Black",
+                    "slug": "black",
+                    "color": "#000000"
+                }
+            ]
+        },
+        "typography": {
+            "dropCap": false,
+            "fluid": true,
+            "fontStyle": true,
+            "fontWeight": true,
+            "letterSpacing": true,
+            "textDecoration": true,
+            "textTransform": true,
+            "fontFamilies": [
+            {
+                "fontFace": [
+                    {
+                        "fontFamily": "Open Sans",
+                        "fontStretch": "normal",
+                        "fontStyle": "bold",
+                        "fontWeight": "700",
+                        "src": [
+                            "file:./assets/fonts/opensans-bold-webfont.woff",
+                            "file:./assets/fonts/opensans-bold-webfont.woff2"
+                        ]
+                    },
+                    {
+                        "fontFamily": "Open Sans",
+                        "fontStretch": "normal",
+                        "fontStyle": "italic",
+                        "src": [
+                            "file:./assets/fonts/opensans-italic-webfont.woff",
+                            "file:./assets/fonts/opensans-italic-webfont.woff2"
+                        ]
+                    },
+                    {
+                        "fontFamily": "Open Sans",
+                        "fontStretch": "normal",
+                        "fontStyle": "light",
+                        "fontWeight": "300",
+                        "src": [
+                                "file:./assets/fonts/opensans-light-webfont.woff",
+                                "file:./assets/fonts/opensans-light-webfont.woff2"
+                        ]
+                    },
+                    {
+                        "fontFamily": "Open Sans",
+                        "fontStretch": "normal",
+                        "fontStyle": "semi-bold",
+                        "fontWeight": "600",
+                        "src": [
+                                "file:./assets/fonts/opensans-semibold-webfont.woff",
+                                "file:./assets/fonts/opensans-semibold-webfont.woff2"
+                        ]
+                    },
+                    {
+                        "fontFamily": "Open Sans",
+                        "fontStretch": "normal",
+                        "fontStyle": "regular",
+                        "fontWeight": "400",
+                        "src": [
+                                "file:./assets/fonts/opensans-regular-webfont.woff",
+                                "file:./assets/fonts/opensans-regular-webfont.woff2"
+                        ]
+                    }
+                ],
+                "fontFamily": "\"Open Sans\", sans-serif",
+                "name": "Open Sans",
+                "slug": "open-sans"
+            }
+            ],
+            "fontSizes": [
+                {
+                    "fluid": {
+                            "min": "0.875rem",
+                            "max": "1rem"
+                    },
+                    "size": "1rem",
+                    "slug": "small"
+                },
+                {
+                    "fluid": {
+                            "min": "1rem",
+                            "max": "1.125rem"
+                    },
+                    "size": "1.125rem",
+                    "slug": "medium"
+                },
+                {
+                    "fluid": {
+                            "min": "1.75rem",
+                            "max": "1.875rem"
+                    },
+                    "size": "1.75rem",
+                    "slug": "large"
+                },
+                {
+                    "fluid": false,
+                    "size": "2.25rem",
+                    "slug": "x-large"
+                },
+                {
+                    "fluid": {
+                            "min": "4rem",
+                            "max": "10rem"
+                    },
+                    "size": "10rem",
+                    "slug": "xx-large"
+                }
+            ]
+        }
+    },
+    "templateParts": [
+        {
+            "name": "header",
+            "title": "Header",
+            "area": "header"
+        },
+        {
+            "name": "footer",
+            "title": "Footer",
+            "area": "footer"
+        }
+    ],
+    "customTemplates": [
+        {
+            "name": "featured",
+            "title": "Featured"
+        },
+        {
+            "name": "policy",
+            "title": "Policy"
+        },
+        {
+            "name": "thank-you",
+            "title": "Thank You"
+        }
+    ]
+}
