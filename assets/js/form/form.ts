@@ -1,1 +1,3 @@
-import './questions.ts';
+import { questions }  from './questions.ts';
+
+console.log( questions );

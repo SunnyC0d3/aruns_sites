@@ -1,4 +1,1 @@
-.wp-block-image figcaption {
-  font-family: var(--wp--preset--font-family--open-sans) !important;
-  color: var(--wp--preset--color--grey) !important;
-}
+.wp-block-image figcaption{color:var(--wp--preset--color--grey)!important;font-family:var(--wp--preset--font-family--open-sans)!important}
