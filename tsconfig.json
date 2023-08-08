@@ -4,7 +4,9 @@
     "noImplicitReturns": true,
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   },
   "include": [ "assets/js/**/*.ts" ]
 }
