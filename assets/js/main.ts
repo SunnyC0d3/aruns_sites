@@ -1,1 +1,1 @@
-import './form/form.ts';
+import './form/form';

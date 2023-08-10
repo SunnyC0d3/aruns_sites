@@ -60,10 +60,6 @@ if( ! function_exists( 'remove_posts_post_type' ) )
     add_filter('register_post_type_args', 'remove_posts_post_type', 0, 2);
 }
 
-//Removes auto p and breaks
-remove_filter ( 'the_content', 'wpautop' ); 
-remove_filter('the_excerpt', 'wpautop');
-
 //Disable REST API
 add_filter( 'json_enabled', '__return_false' );
 add_filter( 'json_jsonp_enabled', '__return_false' );

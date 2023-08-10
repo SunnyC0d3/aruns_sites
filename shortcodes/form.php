@@ -22,15 +22,20 @@ if( ! function_exists( 'survey_form' ) )
                   <h3 class="survey_form-content__body--header">Testing</h3>
                   <div class="survey_form-content__body--input-group">
                      <div class="survey_form-content__body--input-group-radio">
-                        <input tabindex="0" type="radio" value="yes" id="g1" name="yes">
-                        <label for="g1">Yes</label>
+                        <label for="g2">Yes</label>
+                        <input tabindex="0" type="radio" value="yes" id="g2" name="yes">
                      </div>
                      <div class="survey_form-content__body--input-group-radio">
-                        <input tabindex="0" type="radio" value="yes" id="g1" name="no">
-                        <label for="g1">No</label>
+                        <label for="g3">No</label>
+                        <input tabindex="0" type="radio" value="yes" id="g3" name="no">
                      </div>
                   </div>
                </div>
+               <button class="survey_form-content__button">Continue</button>
+            </div>
+            <div class="survey_form-misc">
+               <a class="survey_form-misc--left" href="/"><i class="fa-solid fa-circle-arrow-left"></i> Previous</a>
+               <p class="survey_form-misc--right"><i class="fa-solid fa-lock"></i> Your information is secure. <a href="/">Privacy Policy</a></p>
             </div>
         </div>';
 
