@@ -1,10 +1,11 @@
-export default function progressBar( percent : string )
+export default function progressBar( percent : string ): void
 {
-    const progressBar = document.querySelector( '.survey_form .survey_form-bar' ) as HTMLElement;
+    const progressBar = document.querySelector( '.survey_form .survey_form-bar--progression' ) as HTMLElement;
+    const count = document.querySelector( '.survey_form .survey_form-bar--count' ) as HTMLElement;
 
-    if( progressBar !== null )
+    if( progressBar !== null && count !== null )
     {
-        console.log( progressBar.style.backgroundImage );
-        //progressBar.style.backgroundImage = `linear-gradient(to right, #36c240 ${percent}%, transparent 0%);`;
+        progressBar.style.width = `${percent}%`;
+        count.textContent = `${percent}%`;
     }
 }

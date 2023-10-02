@@ -9,6 +9,7 @@
 
     &-bar 
     {
+        position: relative;
         padding: 0.5rem;
         border-radius: 7.5px;
         border: 1px solid #e5e5e5;
@@ -16,13 +17,38 @@
         color: #fff;
         font-weight: bold;
         text-align: center;
-        background-image: linear-gradient(to right, #36c240 0%, transparent 0%);
+
+        &--progression
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #36c240;
+            transition: width 0.2s ease-in-out;
+            z-index: 0;
+        }
+
+        &--count 
+        {
+            position: relative;
+            z-index: 1;
+            transition: all 0.2s ease-in-out;
+        }
     }
 
     &-content
     {
         &__body 
         {
+            display: none;
+
+            &.active 
+            {
+                display: block;
+            }
+
             &--header 
             {
                 font-size: 1.3rem;
@@ -104,7 +130,7 @@
                 {
                     position: relative;
                     width: 100%;
-                    margin: 0 1rem 1rem 0;
+                    margin: 0 1rem 1rem 1rem;
 
                     & input 
                     {
@@ -144,6 +170,18 @@
             font-weight: bold;
             font-size: 1.25em;
             padding: 1rem;
+        }
+
+        &__warning
+        {
+            display: block;
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            padding: 1rem;
+            margin-top: 1rem;
+            margin: 1rem 1rem 0 1rem;
+            border-radius: 5px;
         }
     }
 
