@@ -70,6 +70,62 @@ export const questions: Questions[] =
 		'callback': '',
 	},
 	{
+		'title': 'What is the average monthly electricity bill of your business?',
+		'body': [ 
+			{
+				'labelName': 'under_1000',
+				'labelValue': 'Under £1000',
+				'id': 'under_1000',
+				'type': 'radio',
+				'name': 'electrcity_bill',
+				'value': 'Under £1000',
+				'placeholder': '',
+				'style': 'width: 100%;'
+			}, 
+			{
+				'labelName': '£1000-10000',
+				'labelValue': '£1000 - £10,000',
+				'id': '£1000-10000',
+				'type': 'radio',
+				'name': 'electrcity_bill',
+				'value': '£1000 - £10,000',
+				'placeholder': '',
+				'style': 'width: 100%;'
+			}, 
+			{
+				'labelName': '£10000-30000',
+				'labelValue': '£10,000 - £30,000',
+				'id': '£10000-30000',
+				'type': 'radio',
+				'name': 'electrcity_bill',
+				'value': '£10,000 - £30,000',
+				'placeholder': '',
+				'style': 'width: 100%;'
+			}, 
+			{
+				'labelName': '£30000-50000',
+				'labelValue': '£30,000 - £50,000',
+				'id': '£30000-50000',
+				'type': 'radio',
+				'name': 'electrcity_bill',
+				'value': '£30,000 - £50,000',
+				'placeholder': '',
+				'style': 'width: 100%;'
+			}, 
+			{
+				'labelName': 'over50000',
+				'labelValue': 'over £50,000',
+				'id': 'over50000',
+				'type': 'radio',
+				'name': 'electrcity_bill',
+				'value': 'over £50,000',
+				'placeholder': '',
+				'style': 'width: 100%;'
+			}, 
+		],
+		'callback': '',
+	},
+	{
 		'title': 'What is your postcode?',
 		'body': [ 
 			{
@@ -84,5 +140,37 @@ export const questions: Questions[] =
 			}
 		],
 		'callback': 'validatePostcode'
-	}
+	},
+	{
+		'title': 'Your email address?',
+		'body': [ 
+			{
+				'labelName': 'email',
+				'labelValue': 'Your email address?',
+				'id': 'email',
+				'type': 'text',
+				'name': 'email',
+				'value': '',
+				'placeholder': 'e.g. example@email.com',
+				'style': ''
+			}
+		],
+		'callback': ''
+	},
+	{
+		'title': 'Your fullname?',
+		'body': [ 
+			{
+				'labelName': 'fullname',
+				'labelValue': 'Your fullname?',
+				'id': 'fullname',
+				'type': 'text',
+				'name': 'fullname',
+				'value': '',
+				'placeholder': 'e.g. Joe Blogs',
+				'style': ''
+			}
+		],
+		'callback': ''
+	},
 ];
