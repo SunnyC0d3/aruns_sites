@@ -13,6 +13,7 @@ import { validateFunctions } from './validation';
     const content: Element | null = document.querySelector( '.survey_form .survey_form-content' );
     const nextBtn: Element | null = document.querySelector( '.survey_form .survey_form-content .survey_form-content__button' );
     const prevBtn: Element | null = document.querySelector( '.survey_form .survey_form-misc .survey_form-misc--left' );
+    const warning: HTMLSpanElement | null = document.querySelector( '.survey_form .survey_form-content__warning' );
 
     //Populate skeleton with data from questions
     questions.map( ( question, index ) => 
@@ -83,11 +84,23 @@ import { validateFunctions } from './validation';
                     return true;
                 }
 
-                if( ! validateFunctions[ input.dataset.callback ]( input.value ) )
+                if( ! validateFunctions[ input.dataset.callback ]( input.value ).type )
                 {
+                    if( warning != null || warning != undefined )
+                    {
+                        warning.style.display = 'block';
+                        warning.textContent = validateFunctions[ input.dataset.callback ]( input.value ).message;
+                    }
+
                     return false;
                 }
-            }  
+            }
+            
+            if( warning != null || warning != undefined )
+            {
+                warning.style.display = 'none';
+                warning.textContent = '';
+            }
 
             return true;
         }
@@ -128,6 +141,5 @@ import { validateFunctions } from './validation';
 })();
 
 
-//Finish off the form by adding the necessary questions and answers
 //Fix radio button selections, so that it stays green if selected
 //Send data off to ajax

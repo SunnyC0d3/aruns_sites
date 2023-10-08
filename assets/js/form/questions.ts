@@ -173,4 +173,20 @@ export const questions: Questions[] =
 		],
 		'callback': ''
 	},
+	{
+		'title': 'Your phone number?',
+		'body': [ 
+			{
+				'labelName': 'phone',
+				'labelValue': 'Your phone number?',
+				'id': 'phone',
+				'type': 'text',
+				'name': 'phone',
+				'value': '',
+				'placeholder': 'e.g. 0200 424 3152',
+				'style': ''
+			}
+		],
+		'callback': ''
+	},
 ];
