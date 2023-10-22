@@ -41,7 +41,7 @@ export const questions: Questions[] =
 				'style': ''
 			},
 		],
-		'callback': ''
+		'callback': 'validateNonEmptyValue'
 	},
 	{
 		'title': 'Which solar panels are you interest in?',
@@ -67,7 +67,7 @@ export const questions: Questions[] =
 				'style': 'width: 100%'
 			}, 
 		],
-		'callback': '',
+		'callback': 'validateNonEmptyValue',
 	},
 	{
 		'title': 'What is the average monthly electricity bill of your business?',
@@ -123,7 +123,7 @@ export const questions: Questions[] =
 				'style': 'width: 100%;'
 			}, 
 		],
-		'callback': '',
+		'callback': 'validateNonEmptyValue',
 	},
 	{
 		'title': 'What is your postcode?',
@@ -155,7 +155,7 @@ export const questions: Questions[] =
 				'style': ''
 			}
 		],
-		'callback': ''
+		'callback': 'validateEmail'
 	},
 	{
 		'title': 'Your fullname?',
@@ -171,7 +171,7 @@ export const questions: Questions[] =
 				'style': ''
 			}
 		],
-		'callback': ''
+		'callback': 'validateNonEmptyValue'
 	},
 	{
 		'title': 'Your phone number?',
@@ -187,6 +187,6 @@ export const questions: Questions[] =
 				'style': ''
 			}
 		],
-		'callback': ''
+		'callback': 'validateUKPhoneNumber'
 	},
 ];
