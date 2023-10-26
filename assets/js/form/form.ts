@@ -5,11 +5,17 @@ import { validateFunctions, Result } from './validation';
 
 (function (): void {
 
-    interface KeyValue {
+    interface KeyValueHTMLInputElement {
         [key: string]: HTMLInputElement | null | undefined;
     }
 
-    let ajaxData: KeyValue = {};
+    interface KeyValueBoolean {
+        [key: string]: boolean | null | undefined;
+    }
+
+    let ajaxData: KeyValueHTMLInputElement = {};
+    let listenersAdded: KeyValueBoolean = {};
+    let listenersIndex = 0;
     let TEMP_ID: string = '';
 
     //Grab the skeleton
@@ -44,10 +50,8 @@ import { validateFunctions, Result } from './validation';
     nextBtn?.addEventListener('click', (e) => {
         e.preventDefault();
 
-        console.log(ajaxData);
-
-        if (validBeforeContinue(ajaxData[TEMP_ID]))
-        {
+        if (validBeforeContinue(ajaxData[TEMP_ID])) {
+            listenersIndex++;
             activeElement('next');
             inputListener();
         }
@@ -56,31 +60,52 @@ import { validateFunctions, Result } from './validation';
     //Go to previous element
     prevBtn?.addEventListener('click', (e) => {
         e.preventDefault();
+
+        if (warning != null || warning != undefined) {
+            warning.style.display = 'none';
+            warning.textContent = '';
+        }
+
+        listenersIndex--;
+        if (listenersIndex < 0) {
+            listenersIndex = 0;
+        }
         activeElement('previous');
         inputListener();
     });
 
     //Listen for input clicks
-    function inputListener()
-    {
-        let active_element : Element | null | undefined = content?.querySelector('.survey_form-content__body.active');
-        const inputs: NodeListOf<HTMLInputElement> | undefined = active_element?.querySelectorAll( 'input' );
+    function inputListener() {
+        let active_element: Element | null | undefined = content?.querySelector('.survey_form-content__body.active');
+        const inputs: NodeListOf<HTMLInputElement> | undefined = active_element?.querySelectorAll('input');
 
-        inputs?.forEach( ( input ) => 
-        {
-            input.addEventListener( 'input', () => 
-            {
-                inputs.forEach((input: HTMLInputElement) => input.previousElementSibling?.classList.remove('active'));
-                input.previousElementSibling?.classList.add('active');
-                ajaxData[ input.getAttribute( 'name' ) as string ] = input;
-                TEMP_ID = input.getAttribute( 'name' ) as string;
-            } );
-        });
+        if (inputs != null || inputs != undefined) {
+            const attribute: string | null = inputs[0].getAttribute('name');
+
+            TEMP_ID = '';
+
+            if (ajaxData[attribute as string]) {
+                TEMP_ID = attribute as string;
+            }
+
+            inputs?.forEach((input) => {
+                if (listenersAdded[listenersIndex] !== true) {
+                    input.addEventListener('input', () => {
+                        inputs.forEach((input: HTMLInputElement) => input.previousElementSibling?.classList.remove('active'));
+                        input.previousElementSibling?.classList.add('active');
+                        ajaxData[attribute as string] = input;
+                        TEMP_ID = attribute as string;
+                    });
+                }
+            });
+
+            listenersAdded[listenersIndex] = true;
+        }
     }
 
     //Gets current active box, determined by pressing continue or previous and assigns input listeners 
     function activeElement(direction: string): void {
-        let active_element : Element | null | undefined = content?.querySelector('.survey_form-content__body.active');
+        let active_element: Element | null | undefined = content?.querySelector('.survey_form-content__body.active');
         let sibling: Element | null | undefined = null;
 
         switch (direction) {
