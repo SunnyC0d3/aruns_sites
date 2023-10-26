@@ -44,16 +44,20 @@ import { validateFunctions, Result } from './validation';
     nextBtn?.addEventListener('click', (e) => {
         e.preventDefault();
 
-        inputListener();
         console.log(ajaxData);
+
         if (validBeforeContinue(ajaxData[TEMP_ID]))
+        {
             activeElement('next');
+            inputListener();
+        }
     });
 
     //Go to previous element
     prevBtn?.addEventListener('click', (e) => {
         e.preventDefault();
         activeElement('previous');
+        inputListener();
     });
 
     //Listen for input clicks
@@ -134,5 +138,4 @@ import { validateFunctions, Result } from './validation';
     }
 })();
 
-//check active  elements ajaxdata
 //Send data off to ajax
